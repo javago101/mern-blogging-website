@@ -1,0 +1,17 @@
+{
+  "name": "mern-blogging-website",
+  "version": "1.0.0",
+  "description": "A full-stack blogging platform built with MERN stack",
+  "scripts": {
+    "start": "./start.sh",
+    "stop": "./stop.sh",
+    "dev": "./start.sh",
+    "kill": "./stop.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/javago101/mern-blogging-website.git"
+  },
+  "author": "guoqingwang",
+  "license": "MIT"
+}

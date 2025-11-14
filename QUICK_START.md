@@ -6,24 +6,40 @@ Your Node.js environment is now configured to use v24.11.0 by default in all new
 
 ---
 
-## 📋 Three Ways to Start Your App
+## 📋 Super Simple Commands (Recommended!) ⭐
 
-### **Option 1: One-Command Start** (Easiest) ⭐
+### **From Anywhere (Global Aliases):**
 
 ```bash
-./start.sh
+# Start the app
+blog-start
+
+# Stop the app
+blog-stop
+
+# Go to project directory
+blog
 ```
 
-This automatically:
-- ✅ Checks Node version
-- ✅ Kills any existing processes
-- ✅ Starts backend on http://localhost:3000
-- ✅ Starts frontend on http://localhost:5173
-- ✅ Shows live logs
+### **From Project Directory (npm):**
 
-**To stop:**
 ```bash
-./stop.sh
+# Start the app
+npm start
+
+# Stop the app
+npm stop
+```
+
+---
+
+## 📋 Other Ways to Start
+
+### **Option 1: Shell Script**
+
+```bash
+./start.sh   # Start
+./stop.sh    # Stop
 ```
 
 ---
@@ -46,18 +62,32 @@ npm run dev
 
 ---
 
-### **Option 3: npm Scripts**
+## 🎯 Examples
 
-**Backend:**
+### Starting Your App:
+
 ```bash
-cd server
+# Method 1 (Easiest - from anywhere!)
+blog-start
+
+# Method 2 (In project folder)
 npm start
+
+# Method 3 (Classic)
+./start.sh
 ```
 
-**Frontend:**
+### Stopping Your App:
+
 ```bash
-cd "blogging website - frontend"
-npm run dev
+# Method 1 (Easiest - from anywhere!)
+blog-stop
+
+# Method 2 (In project folder)
+npm stop
+
+# Method 3 (Classic)
+./stop.sh
 ```
 
 ---
@@ -79,6 +109,15 @@ nvm use default --silent
 - `start.sh` - Start both servers
 - `stop.sh` - Stop both servers
 
+### 4. **Added npm Scripts**
+- `npm start` - Quick start
+- `npm stop` - Quick stop
+
+### 5. **Added Shell Aliases**
+- `blog-start` - Start from anywhere
+- `blog-stop` - Stop from anywhere
+- `blog` - Jump to project directory
+
 ---
 
 ## 🆘 Troubleshooting
@@ -98,8 +137,8 @@ Then try starting again.
 
 **Solution:**
 ```bash
-./stop.sh
-./start.sh
+blog-stop    # or npm stop
+blog-start   # or npm start
 ```
 
 Or manually:
@@ -145,7 +184,7 @@ node --version  # Should be v24.11.0
 
 Your app is now ready! You can:
 
-1. ✅ Start app with `./start.sh`
+1. ✅ Start app with `blog-start`
 2. ✅ Open http://localhost:5173
 3. ✅ Start building features!
 
