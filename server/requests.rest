@@ -1,7 +1,25 @@
-POST http://localhost:3000/signin 
+
+# POST  http://localhost:3000/signup
+# Content-Type: application/json
+
+# {
+#   "fullname": "Test User",
+#   "email": "testuser2@example.com",
+#   "password": "Test@1234"
+# }
+
+POST  http://localhost:3000/create-blog
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5MTZlMTE4MDQyZDlmMGZhNjk4MjRkYyIsImlhdCI6MTc2MzEwNzA5Nn0.bvNl9Kas1KOvewW7DzX1Z2YIXP7wf2p3hQiLnuBhULo
 
 {
-    "email": "kunaa@gmail.com",
-    "password": "Kunaal"
+  "title": "My First Blog Post 1 @ 2024 # Bloging  & ^ * ( ) ",  
+  "content":{
+    "blocks": [1,2]
+  },
+  "tags": ["Introduction", "FirstPost"],
+  "banner": "https://example.com/banner.jpg",
+
+  "des": "This is the description of my first blog post."
+  
 }
