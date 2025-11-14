@@ -1,4 +1,5 @@
- # Frontend Service
+services:
+  # Frontend Service
   frontend:
     build:
       context: ./blogging website - frontend
