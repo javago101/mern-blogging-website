@@ -1,0 +1,45 @@
+version: '3.8'
+
+services:
+  # Frontend Service
+  frontend:
+    build:
+      context: ./blogging website - frontend
+      dockerfile: Dockerfile
+    ports:
+      - "80:80"
+    environment:
+      - NODE_ENV=production
+    depends_on:
+      - backend
+    restart: unless-stopped
+    networks:
+      - blog-network
+
+  # Backend Service
+  backend:
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - DB_LOCATION=${DB_LOCATION}
+      - SECRET_ACCESS_KEY=${SECRET_ACCESS_KEY}
+      - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
+      - AWS_ACCESS_KEY=${AWS_ACCESS_KEY}
+      - AWS_SDK_JS_SUPPRESS_MAINTENANCE_MODE_MESSAGE=1
+    restart: unless-stopped
+    networks:
+      - blog-network
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost:3000"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+networks:
+  blog-network:
+    driver: bridge
